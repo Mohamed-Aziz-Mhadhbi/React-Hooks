@@ -4,27 +4,34 @@ import './App.css'
 function App() {
 
   const [counter, setCounter] = useState(0);
-  const [inputValue, SetInputValue] = userState("Hello!");
+  const [inputValue, SetInputValue] = useState("Hello!");
 
   const increment = () => {
     setCounter(counter +1);
   }
 
   const letOnchange = (event) => {
-    const value = event.target.value;
-    SetInputValue(value);
+    const newvalue = event.target.value;
+    SetInputValue(newvalue);
   }
 
   return (
     <>
-      <p className="read-the-docs">
+    <div>
+      <p>
         {counter}
       </p>
 
       <button onClick={increment}>increment</button>
-
-      <input placeholder='Enter Something ...' onChange={letOnchange}>{inputValue}
-      </input>
+      </div>
+      <br>
+      </br>
+      <div>
+      <input placeholder='Enter Something ...' onChange={letOnchange}>
+      </input> {inputValue}
+      </div>
+      
+    
     </>
   )
 }
